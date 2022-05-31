@@ -27,11 +27,13 @@
                                     <tr>
                                         <th scope="row">
                                             <div class="media align-items-center">
-                                                <a href="{{ route('product', $product->id) }}"
-                                                    class="avatar rounded-circle mr-3">
-                                                    <img alt="{{ $product->name }}"
-                                                        src="{{ $product->images[0]->src }}">
-                                                </a>
+                                                @if ($product->images)
+                                                    <a href="{{ route('product', $product->id) }}"
+                                                        class="avatar rounded-circle mr-3">
+                                                        <img alt="{{ $product->name }}"
+                                                            src="{{ $product->images[0]->src }}">
+                                                    </a>
+                                                @endif
                                                 <div class="media-body">
                                                     <a href="{{ route('product', $product->id) }}">
                                                         <span class="name mb-0 text-sm">{{ $product->name }}</span>
